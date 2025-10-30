@@ -1,0 +1,285 @@
+/*
+  Folha de Estilos Principal
+  Restaurante da Nona
+*/
+
+/* 1. Configurações Globais e Reset */
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Lexend Deca', sans-serif;
+  line-height: 1.6;
+  color: #181818;
+  background-color: #f8f8f8;
+  
+}
+body li{
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 2. Layout Principal */
+
+/* Define o espaçamento vertical e lateral padrão para as seções */
+main section:not(.hero-banner),
+footer {
+  padding: 60px 20px;
+}
+
+/* Centraliza o contêiner de conteúdo na página */
+main section:not(.hero-banner)>*,
+footer>* {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* 3. Tipografia */
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
+
+p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+a {
+  color: #c0392b;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* 4. Componentes Específicos */
+
+/* Header (Cabeçalho) */
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: transparent;
+  color: white;
+}
+
+header nav a {
+  color: white;
+}
+
+/* Hero Banner (Banner Principal) */
+.hero-banner {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  background-image: url('https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+  z-index: 0  ;
+}
+
+/* Camada escura sobre o banner para legibilidade */
+.hero-banner::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 20px;
+}
+
+.hero-content h2 {
+  font-size: 3.5rem;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+}
+
+.hero-content p {
+  font-size: 1.4rem;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Cards (Pratos Favoritos) */
+.cards {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 25px;
+  text-align: center;
+}
+
+.cards article {
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  height: 100%;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cards article:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.cards h3 {
+  margin-top: 0;
+  color: #c0392b;
+}
+
+.cards .preco {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 0;
+}
+
+/* About (Seção Sobre) */
+.about {
+  display: grid;
+  grid-template-columns: 5fr 3fr;
+  align-items: center;
+  gap: 20px;
+}
+
+.about img {
+  width: 100%;
+  border-radius: 12px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+}
+
+.about figcaption {
+  font-size: 0.9rem;
+  color: #777;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.cta {
+  display: inline-block;
+  background-color: #c0392b;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-top: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.cta:hover {
+  background-color: #a93226;
+  text-decoration: none;
+}
+
+footer{
+  background-color:#cfb6b4 ;
+}
+/* 5. Design Responsivo (Media Queries) */
+
+/* Estilos para telas de até 768px de largura (Tablets) */
+@media (max-width: 768px) {
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
+
+  header {
+    flex-direction: column;
+    text-align: center;
+    padding: 15px;
+  }
+
+  main section:not(.hero-banner),
+  footer {
+    text-align: center;
+  }
+
+  .cards article,
+  .about div,
+  #contato-resumo address {
+    text-align: left;
+  }
+  
+  .about {
+    grid-template-columns: 1fr;
+  }
+
+  .about figure {
+    width: 90%;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 20px;
+  }
+
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Estilos para telas de até 480px de largura (Celulares) */
+@media (max-width: 480px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+  p { font-size: 0.95rem; }
+
+  main section:not(.hero-banner),
+  footer {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .about div {
+    text-align: left;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
+}

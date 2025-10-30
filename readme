@@ -1,0 +1,37 @@
+Padrões do Projeto
+Aqui definimos algumas convenções para manter o código organizado.
+
+1. Layout Principal
+Contêiner Principal: O conteúdo fica dentro de um contêiner centralizado com max-width: 1100px.
+Espaçamento: As seções principais têm um padding vertical de 60px e horizontal de 20px para respiro.
+
+2. Tipografia
+Fonte: Usamos a Lexend Deca, importada via Google Fonts.
+Unidades: Fontes e espaçamentos usam rem para garantir a escalabilidade e acessibilidade.
+Hierarquia: A escala de títulos (h1 a h6) é responsiva e se ajusta nos breakpoints definidos.
+
+3. Paleta de Cores
+#181818 (Cinza Escuro): Texto principal.
+#f8f8f8 (Cinza Claro): Fundo da página.
+#c0392b (Vermelho): Usado como cor de destaque para links, botões e alguns títulos.
+#ffffff (Branco): Textos em fundos escuros e o fundo dos cards.
+
+4. Componentes
+.hero-banner: Usa um overlay com ::before para escurecer a imagem de fundo e melhorar o contraste do texto.
+.cards: Layout em grid responsivo para os pratos.
+.about: Layout em grid para a seção com imagem e texto.
+
+Layout Responsivo
+O site se adapta a diferentes telas usando dois breakpoints principais.
+
+Breakpoint: 768px (Tablets)
+Neste ponto, o layout se ajusta da seguinte forma:
+O cabeçalho vira uma coluna única.
+Os cards de pratos passam para 2 colunas.
+A seção "Sobre" empilha a imagem sobre o texto.
+Os textos de algumas seções são centralizados para melhor visualização.
+
+Breakpoint: 480px (Celulares)
+Para telas menores:
+Os cards de pratos passam a ter apenas 1 coluna.
+As fontes e o espaçamento lateral das seções são reduzidos.
