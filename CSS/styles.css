@@ -11,13 +11,14 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 :root {
-            --cor-vinho: #880606;
-            --cor-vermelho-medio: #d53d06;
-            --cor-laranja: #ff8207;
-            --cor-preta: #231d1e;
-            --cor-branca: #fcfcfc;
-        }
+  --cor-vinho: #880606;
+  --cor-vermelho-medio: #d53d06;
+  --cor-laranja: #ff8207;
+  --cor-preta: #231d1e;
+  --cor-branca: #fcfcfc;
+}
 
 html {
   font-size: 16px;
@@ -27,11 +28,11 @@ html {
 body {
   font-family: 'Lexend Deca', sans-serif;
   line-height: 1.6;
-  color: #181818;
-  background-color: #f8f8f8;
-  
+  color: var(--cor-preta); /* PADRONIZADO */
+  background-color: var(--cor-branca); /* PADRONIZADO */
 }
-body li{
+
+body li {
   list-style: none;
 }
 
@@ -59,7 +60,12 @@ footer>* {
 
 /* 3. Tipografia */
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
@@ -78,12 +84,14 @@ p {
 }
 
 a {
-  color: #c0392b;
+  color: var(--cor-vermelho-medio); /* PADRONIZADO */
   text-decoration: none;
+  transition: color 0.3s ease;
 }
 
 a:hover {
-  text-decoration: underline;
+  color: var(--cor-laranja); /* PADRONIZADO */
+  text-decoration: none; /* Mais moderno que underline */
 }
 
 /* 4. Componentes Específicos */
@@ -105,6 +113,10 @@ header {
 
 header nav a {
   color: white;
+  font-weight: bold;
+}
+header nav a:hover{
+  color: var(--cor-laranja);
 }
 
 /* Hero Banner (Banner Principal) */
@@ -120,7 +132,7 @@ header nav a {
   align-items: center;
   text-align: center;
   color: white;
-  z-index: 0  ;
+  z-index: 0;
 }
 
 /* Camada escura sobre o banner para legibilidade */
@@ -175,13 +187,13 @@ header nav a {
 
 .cards h3 {
   margin-top: 0;
-  color: #c0392b;
+  color: var(--cor-vermelho-medio); /* PADRONIZADO */
 }
 
 .cards .preco {
   font-size: 1.2rem;
   font-weight: bold;
-  color: #333;
+  color: var(--cor-preta); /* PADRONIZADO */
   margin-bottom: 0;
 }
 
@@ -202,14 +214,15 @@ header nav a {
 
 .about figcaption {
   font-size: 0.9rem;
-  color: #777;
+  color: var(--cor-preta); /* PADRONIZADO */
+  opacity: 0.7; /* Mantém como texto secundário */
   text-align: center;
   margin-top: 8px;
 }
 
 .cta {
   display: inline-block;
-  background-color: #c0392b;
+  background-color: var(--cor-vermelho-medio); /* PADRONIZADO */
   color: white;
   padding: 12px 24px;
   border-radius: 5px;
@@ -220,13 +233,94 @@ header nav a {
 }
 
 .cta:hover {
-  background-color: #a93226;
+  background-color: var(--cor-laranja); /* PADRONIZADO */
   text-decoration: none;
 }
 
-footer{
-  background-color:#cfb6b4 ;
+/* Formulário de Contato (MOVIDO PARA CÁ) */
+.form-container {
+  background-color: var(--cor-branca);
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  max-width: 500px;
+  /* O margin: auto já é aplicado pela regra de layout principal */
 }
+
+.form-container h2 {
+  text-align: center;
+  color: var(--cor-vermelho-medio);
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+}
+
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.85rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: var(--cor-preta);
+  background-color: #f0f0f0;
+  box-sizing: border-box;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: var(--cor-laranja);
+  box-shadow: 0 0 8px rgba(255, 130, 7, 0.4);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 1rem;
+  border: none;
+  border-radius: 6px;
+  background-color: var(--cor-vinho);
+  color: var(--cor-branca);
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.submit-btn:hover {
+  background-color: var(--cor-laranja);
+  transform: translateY(-2px);
+}
+
+/* Rodapé */
+footer {
+  background-color: var(--cor-preta); /* PADRONIZADO */
+  color: var(--cor-branca); /* PADRONIZADO */
+}
+
+/* Links dentro do rodapé precisam de cor especial */
+footer a {
+   color: var(--cor-branca);
+   font-weight: bold;
+}
+
+footer a:hover {
+  color: var(--cor-laranja);
+}
+
+
 /* 5. Design Responsivo (Media Queries) */
 
 /* Estilos para telas de até 768px de largura (Tablets) */
@@ -239,6 +333,8 @@ footer{
     flex-direction: column;
     text-align: center;
     padding: 15px;
+    /* Pode ser legal adicionar um fundo sólido em telas menores */
+    /* background-color: var(--cor-preta); */
   }
 
   main section:not(.hero-banner),
@@ -246,12 +342,14 @@ footer{
     text-align: center;
   }
 
+  /* Reseta o alinhamento para componentes específicos */
   .cards article,
   .about div,
+  .form-container, /* ADICIONADO */
   #contato-resumo address {
     text-align: left;
   }
-  
+
   .about {
     grid-template-columns: 1fr;
   }
@@ -290,74 +388,3 @@ footer{
     grid-template-columns: 1fr;
   }
 }
-/* O container do formulário */
-        .form-container {
-            background-color: var(--cor-branca);
-            padding: 2.5rem;
-            border-radius: 12px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-            width: 100%;
-            max-width: 500px;
-        }
-
-        /* Título do formulário */
-        .form-container h2 {
-            text-align: center;
-            color: var(--cor-vermelho-medio); /* Destaque no título */
-            margin-top: 0;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-
-        /* Grupos de formulário (label + input) */
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 600;
-        }
-
-        /* Estilo dos campos de input e textarea */
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.85rem;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 1rem;
-            color: var(--cor-preta);
-            background-color: #f0f0f0; /* Um cinza bem claro para os campos */
-            box-sizing: border-box; /* Garante que o padding não quebre o layout */
-            transition: border-color 0.3s, box-shadow 0.3s;
-        }
-
-        /* Efeito de FOCO (quando o usuário clica no campo) */
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--cor-laranja); /* Destaque laranja no foco */
-            box-shadow: 0 0 8px rgba(255, 130, 7, 0.4);
-        }
-
-        /* Botão de Envio */
-        .submit-btn {
-            width: 100%;
-            padding: 1rem;
-            border: none;
-            border-radius: 6px;
-            background-color: var(--cor-vinho); /* Cor principal do botão */
-            color: var(--cor-branca);
-            font-size: 1.1rem;
-            font-weight: bold;
-            cursor: pointer;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-
-        /* Efeito HOVER (quando o mouse passa por cima) */
-        .submit-btn:hover {
-            background-color: var(--cor-laranja); /* Muda para laranja no hover */
-            transform: translateY(-2px); /* Efeito sutil de "levantar" */
-        }
