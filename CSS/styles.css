@@ -319,6 +319,7 @@ header nav a[aria-current="page"] {
 
 .cta:hover {
   background-color: var(--cor-laranja); /* PADRONIZADO */
+  color: var(--cor-branca);
   text-decoration: none;
 }
 
