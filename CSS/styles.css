@@ -11,6 +11,13 @@
   padding: 0;
   box-sizing: border-box;
 }
+:root {
+            --cor-vinho: #880606;
+            --cor-vermelho-medio: #d53d06;
+            --cor-laranja: #ff8207;
+            --cor-preta: #231d1e;
+            --cor-branca: #fcfcfc;
+        }
 
 html {
   font-size: 16px;
@@ -283,3 +290,74 @@ footer{
     grid-template-columns: 1fr;
   }
 }
+/* O container do formulário */
+        .form-container {
+            background-color: var(--cor-branca);
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        /* Título do formulário */
+        .form-container h2 {
+            text-align: center;
+            color: var(--cor-vermelho-medio); /* Destaque no título */
+            margin-top: 0;
+            margin-bottom: 2rem;
+            font-size: 2rem;
+        }
+
+        /* Grupos de formulário (label + input) */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+
+        /* Estilo dos campos de input e textarea */
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.85rem;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 1rem;
+            color: var(--cor-preta);
+            background-color: #f0f0f0; /* Um cinza bem claro para os campos */
+            box-sizing: border-box; /* Garante que o padding não quebre o layout */
+            transition: border-color 0.3s, box-shadow 0.3s;
+        }
+
+        /* Efeito de FOCO (quando o usuário clica no campo) */
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--cor-laranja); /* Destaque laranja no foco */
+            box-shadow: 0 0 8px rgba(255, 130, 7, 0.4);
+        }
+
+        /* Botão de Envio */
+        .submit-btn {
+            width: 100%;
+            padding: 1rem;
+            border: none;
+            border-radius: 6px;
+            background-color: var(--cor-vinho); /* Cor principal do botão */
+            color: var(--cor-branca);
+            font-size: 1.1rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+
+        /* Efeito HOVER (quando o mouse passa por cima) */
+        .submit-btn:hover {
+            background-color: var(--cor-laranja); /* Muda para laranja no hover */
+            transform: translateY(-2px); /* Efeito sutil de "levantar" */
+        }

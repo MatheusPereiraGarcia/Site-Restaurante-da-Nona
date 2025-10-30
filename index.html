@@ -34,6 +34,7 @@
     <!-- Pratos favoritos -->
     <section id="favoritos" aria-labelledby="favoritos-title">
       <h2 id="favoritos-title">Pratos favoritos</h2>
+      <p></p>
       <ul class="cards">
         <li>
           <article>
@@ -84,6 +85,37 @@
     </section>
 
     <!-- Contato / Localização -->
+    <section id="contato">
+      <div class="form-container">
+        <form action="#" method="POST">
+          <h2>Deixe sua mensagem</h2>
+
+          <div class="form-group">
+            <label for="name">Nome Completo:</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Telefone (Opcional):</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Sua Mensagem:</label>
+            <textarea id="message" name="message" rows="6" required></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">Enviar Contato</button>
+        </form>
+      </div>
+
+
+    </section>
     <section id="contato-resumo" aria-labelledby="contato-title">
       <h2 id="contato-title">Contate-nos</h2>
       <address>
