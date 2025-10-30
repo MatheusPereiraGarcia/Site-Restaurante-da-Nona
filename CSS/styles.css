@@ -98,33 +98,71 @@ a:hover {
 
 /* Header (Cabeçalho) */
 header {
-  position: absolute;
-  top: 0;
+  /* MUDANÇA 1: De 'absolute' para 'sticky' */
+  position: sticky; 
+  top: 0; /* Diz para "grudar" no topo da tela */
   left: 0;
   width: 100%;
   z-index: 100;
+  
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 50px;
-  background: transparent;
-  color: white;
+  padding: 15px 50px; /* Diminuí um pouco a altura */
+
+  /* MUDANÇA 2: Fundo branco e texto escuro */
+  background-color: var(--cor-branca);
+  color: var(--cor-preta);
+
+  /* MUDANÇA 3: A sombra */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
 
-header nav a {
-  color: white;
-  font-weight: bold;
+/* Precisamos estilizar o H1 e o Tagline dentro do header */
+header .brand h1 {
+  font-size: 1.6rem; /* Tamanho bom para o header */
+  margin-bottom: 0;
+  line-height: 1;
+  color: var(--cor-vermelho-medio); /* Dando destaque para a marca */
 }
-header nav a:hover{
-  color: var(--cor-laranja);
+
+header .brand .tagline {
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  opacity: 0.8;
+}
+
+/* MUDANÇA 4: Cor dos links */
+header nav a {
+  color: var(--cor-preta); /* Cor principal do link */
+  font-weight: bold;
+  font-size: 1rem;
+  padding: 8px 16px;
+  border-radius: 6px;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Efeito hover melhorado */
+header nav a:hover {
+  background-color: var(--cor-laranja);
+  color: var(--cor-branca);
+  text-decoration: none;
+}
+
+/* Link da página atual (aria-current) */
+header nav a[aria-current="page"] {
+  color: var(--cor-vinho);
+  background-color: rgba(136, 6, 6, 0.05); /* Um fundo bem sutil */
 }
 
 /* Hero Banner (Banner Principal) */
-.hero-banner {
+.banner-principal {
   position: relative;
-  height: 100vh;
+  /* Altura reduzida para 70% da tela, não 100% */
+  height: 70vh; 
   width: 100%;
-  background-image: url('https://images.pexels.com/photos/1267320/pexels-photo-1267320.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+  /* NOVA IMAGEM: Mais apetitosa e temática */
+  background-image: url('https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg');
   background-size: cover;
   background-position: center;
   display: flex;
@@ -135,33 +173,53 @@ header nav a:hover{
   z-index: 0;
 }
 
-/* Camada escura sobre o banner para legibilidade */
-.hero-banner::before {
+/* Camada de COR (usando seu --cor-vinho) sobre o banner */
+.banner-principal::before {
   content: '';
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  /* Em vez de preto, usamos a cor da sua marca! 
+     (88, 6, 6) é o RGB de #880606 */
+  background-color: rgba(136, 6, 6, 0.7); 
 }
 
-.hero-content {
+.banner-conteudo {
   position: relative;
   z-index: 2;
   padding: 20px;
 }
 
-.hero-content h2 {
+.banner-conteudo h2 {
   font-size: 3.5rem;
   text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-.hero-content p {
+.banner-conteudo p {
   font-size: 1.4rem;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+  max-width: 600px; /* Limita a largura do texto */
+  margin: 1rem auto 2rem auto;
 }
 
+/* Botão (CTA) específico para o banner.
+  O .cta normal é vermelho, ele sumiria no fundo vermelho.
+  Este .cta-banner é branco e vira laranja no hover.
+*/
+.cta-banner {
+  background-color: var(--cor-branca);
+  color: var(--cor-vinho);
+  font-size: 1.1rem;
+  padding: 14px 28px;
+}
+
+.cta-banner:hover {
+  background-color: var(--cor-laranja);
+  color: var(--cor-preta);
+  text-decoration: none;
+}
 /* Cards (Pratos Favoritos) */
 .cards {
   list-style: none;
