@@ -725,58 +725,36 @@ footer a:hover {
 
 /* Linha com Descrição ... Preço */
 .menu-item .item-info {
-  display: flex;
-  align-items: baseline; /* Alinha o texto pela base */
+  display: grid;
+  grid-template-columns: auto 1fr auto; /* desc | pontinhos | preço */
+  column-gap: 12px;
+  align-items: center;
   width: 100%;
 }
 
 .menu-item .desc {
   font-size: 0.9rem;
   color: #555;
-  white-space: nowrap; /* Tenta não quebrar a linha da descrição */
-  max-width: 50%;
+  white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 
-/* A linha pontilhada mágica que estica */
 .menu-item .dots {
-  flex: 1; /* Cresce para ocupar o espaço vazio */
+  width: 100%;
   border-bottom: 2px dotted #ccc;
-  margin: 0 10px;
   position: relative;
-  top: -4px;
+  top: -3px;
 }
 
 .price-badge {
   background-color: #000;
   color: #fff;
   padding: 5px 12px;
-  border-radius: 20px; /* Formato de pílula */
+  border-radius: 20px;
   font-weight: bold;
   font-size: 0.9rem;
   white-space: nowrap;
 }
 
 /* Ajuste Mobile para a Lista */
-@media (max-width: 480px) {
-  .menu-item {
-    align-items: flex-start;
-  }
-  
-  .menu-item .item-info {
-    flex-wrap: wrap; /* Deixa quebrar linha se o nome for muito grande */
-  }
-  
-  .menu-item .dots {
-    display: none; /* Esconde os pontinhos no celular para não bagunçar */
-  }
-  
-  .menu-item .desc {
-    white-space: normal; /* Permite texto corrido no celular */
-    margin-bottom: 8px;
-    display: block;
-    width: 100%;
-    max-width: 100%;
-  }
-}
