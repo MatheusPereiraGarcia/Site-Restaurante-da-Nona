@@ -10,32 +10,32 @@
 </head>
 
 <body>
+  <a href="#conteudo-principal" class="skip-link">Pular para o conteúdo principal</a>
   <header>
     <div class="brand">
       <h1>Restaurante da Nona</h1>
       <p class="tagline">Comida caseira, como a da vó.</p>
     </div>
-    <nav aria-label="Navegação principal">
+    <nav aria-label="Navegação principal">  
       <ul>
         <li><a href="index.html" aria-current="page">Início</a></li>
-        <li><a href="#cardapio">Cardápio</a></li>
+        <li><a href="cardapio.html">Cardápio</a></li>
       </ul>
     </nav>
   </header>
 
-  <main>
+  <main id="conteudo-principal">
     <section class="banner-principal" title="Nossa especialidade: massas frescas!">
       <div class="banner-conteudo">
         <h2>Sabor que abraça: a tradição da Nona na sua mesa.</h2>
         <p>Autêntica comida italiana feita com ingredientes frescos e muito carinho.</p>
         <p>
-          <a href="#favoritos" class="cta cta-banner">Conheça nossos pratos</a>
+          <a href="cardapio.html" class="cta cta-banner">Conheça nossos pratos</a>
         </p>
       </div>
     </section>
 
 
-    <!-- Pratos favoritos -->
     <section id="favoritos" aria-labelledby="favoritos-title">
       <h2 id="favoritos-title">Pratos favoritos</h2>
       <p></p>
@@ -64,13 +64,13 @@
       </ul>
     </section>
 
-    <!-- informação Sobre -->
     <section id="sobre" aria-labelledby="sobre-title">
       <h2 id="sobre-title">Sobre a Nona</h2>
       <article class="about">
         <figure>
-         <div style="display: flex; justify-content: center;">
-          <img src="img/nona.png" style="width: 60%; border-radius: 50px; " title="Essa é a Nona Maria, nossa fundadora!" alt="Foto da fundadora Nona">
+          <div style="display: flex; justify-content: center;">
+            <img src="img/nona.png" style="width: 60%; border-radius: 50px; "
+              title="Essa é a Nona Maria, nossa fundadora!" alt="Foto da fundadora Nona">
           </div>
           <figcaption>Nona Maria — fundadora e receitaira</figcaption>
         </figure>
@@ -78,72 +78,74 @@
           <p>O Restaurante da Nona nasceu em 1998, a partir das receitas que a família preparava aos domingos. Nossa
             proposta é oferecer pratos caseiros, ingredientes frescos e atendimento acolhedor.</p>
           <p>Aberto para almoço e jantar, também trabalhamos com encomendas para eventos familiares.</p>
-          <p><a href="#about" class="cta" id="cta-leia">Leia mais sobre nossa história</a></p>
+          <p><a href="#sobre" class="cta" id="cta-leia">Leia mais sobre nossa história</a></p>
         </div>
       </article>
     </section>
 
-    <!-- Chamada para ação -->
     <section id="cta" aria-labelledby="cta-title">
       <h2 id="cta-title">Ficou com fome?</h2>
       <p>Explore nosso cardápio completo e peça online ou por telefone.</p>
-      <p><a href="#cardapio" class="cta large">Ver cardápio</a></p>
+      <p><a href="cardapio.html" class="cta large">Ver cardápio</a></p>
     </section>
 
-    <!-- Contato / Localização -->
-    <section id="contato">
-      <div class="form-container">
-        <form action="#" method="POST">
-          <h2>Deixe sua mensagem</h2>
+    <div class="container-duplo-contato">
 
-          <div class="form-group">
-            <label for="name">Nome Completo:</label>
-            <input type="text" id="name" name="name" required>
+      <section id="contato">
+        <div class="form-container">
+          <form action="#" method="POST">
+            <h2>Deixe sua mensagem</h2>
+
+            <div class="form-group">
+              <label for="name">Nome Completo:</label>
+              <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+              <label for="email">E-mail:</label>
+              <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Telefone (Opcional):</label>
+              <input type="tel" id="phone" name="phone">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Sua Mensagem:</label>
+              <textarea id="message" name="message" rows="6" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">Enviar Contato</button>
+          </form>
+        </div>
+      </section>
+
+      <section id="contato-resumo" aria-labelledby="contato-title">
+        <h2 id="contato-title">Contate-nos</h2>
+        <div id="contato-esquerda">
+          <address>
+            <p>Email: <a href="mailto:contato@restaurantedanona.com">contato@restaurantedanona.com</a></p>
+            <p>Telefone: <a href="tel:+5511999998888">+55 (11) 99999-8888</a></p>
+            <p>Endereço: R. das Flores, 123 — Centro, São Paulo, SP</p>
+          </address>
+          <div class="mapa">
+            <p><strong>Localização:</strong> Próximo à Praça Central — ver mapa no Google Maps.</p>
           </div>
+        </div>
+      </section>
 
-          <div class="form-group">
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Telefone (Opcional):</label>
-            <input type="tel" id="phone" name="phone">
-          </div>
-
-          <div class="form-group">
-            <label for="message">Sua Mensagem:</label>
-            <textarea id="message" name="message" rows="6" required></textarea>
-          </div>
-
-          <button type="submit" class="submit-btn">Enviar Contato</button>
-        </form>
-      </div>
-    </section>
-
-    <section id="contato-resumo" aria-labelledby="contato-title">
-      <h2 id="contato-title">Contate-nos</h2>
-      <div id="contato-esquerda">
-      <address>
-        <p>Email: <a href="mailto:contato@restaurantedanona.com">contato@restaurantedanona.com</a></p>
-        <p>Telefone: <a href="tel:+5511999998888">+55 (11) 99999-8888</a></p>
-        <p>Endereço: R. das Flores, 123 — Centro, São Paulo, SP</p>
-      </address>
-      <div class="mapa">
-        <p><strong>Localização:</strong> Próximo à Praça Central — ver mapa no Google Maps.</p>
-      </div>
-    </section>
     </div>
   </main>
 
   <footer>
     <nav aria-label="Rodapé">
       <ul class="footer-links">
-        <li><a href="cardapio">Cardápio</a></li>
+        <li><a href="cardapio.html">Cardápio</a></li>
         <li><a href="#contato">Contato</a></li>
       </ul>
     </nav>
-    <p>© 2025 Restaurante da Nona • CNPJ fictício • Fotos meramente ilustrativas</p>
+    <p>© 2025 Restaurante da Nona • CNPJ: 848484-0000 • Fotos meramente ilustrativas</p>
   </footer>
 </body>
 

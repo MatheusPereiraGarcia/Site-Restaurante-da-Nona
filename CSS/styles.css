@@ -1,6 +1,6 @@
-
-
-/* 1. Configurações Globais e Reset */
+/* ==========================================================================
+   1. CONFIGURAÇÕES GLOBAIS (Reset, Variáveis, Base)
+   ========================================================================== */
 @import url('https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;700&display=swap');
 
 * {
@@ -26,7 +26,7 @@ body {
   font-family: 'Lexend Deca', sans-serif;
   line-height: 1.6;
   color: var(--cor-preta);
-  background-color: var(--cor-branca); 
+  background-color: var(--cor-branca);
 }
 
 body li {
@@ -39,58 +39,43 @@ img {
   display: block;
 }
 
-/* 2. Layout Principal */
-
-/* Define o espaçamento vertical e lateral padrão para as seções */
-main section:not(.hero-banner),
-footer {
-  padding: 60px 20px;
+/* ==========================================================================
+   2. ACESSIBILIDADE (Skip Link)
+   ========================================================================== */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 0;
+  background-color: var(--cor-vinho);
+  color: var(--cor-branca);
+  padding: 15px 20px;
+  z-index: 9999;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 0 0 10px 0;
+  transition: top 0.3s ease;
 }
 
-/* Centraliza o contêiner de conteúdo na página */
-main section:not(.hero-banner)>*,
-footer>* {
-  max-width: 1100px;
-  margin-left: auto;
-  margin-right: auto;
+.skip-link:focus {
+  top: 0;
+  outline: 3px solid var(--cor-laranja);
 }
 
-/* 3. Tipografia */
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+/* ==========================================================================
+   3. TIPOGRAFIA E LINKS
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
-h1 {
-  font-size: 3rem;
-}
-
-h2 {
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-size: 1.75rem;
-}
-
-h4 {
-  font-size: 1.25rem;
-}
-
-h5 {
-  font-size: 1rem;
-}
-
-h6 {
-  font-size: 0.875rem;
-}
+h1 { font-size: 3rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 1.75rem; }
+h4 { font-size: 1.25rem; }
+h5 { font-size: 1rem; }
+h6 { font-size: 0.875rem; }
 
 p {
   font-size: 1rem;
@@ -108,27 +93,39 @@ a:hover {
   text-decoration: none;
 }
 
+/* ==========================================================================
+   4. ESTRUTURA DE LAYOUT (Main e Sections)
+   ========================================================================== */
+main section:not(.hero-banner),
+footer {
+  padding: 60px 20px;
+}
 
-/* Header (Cabeçalho) */
+main section:not(.hero-banner)>*,
+footer>* {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ==========================================================================
+   5. CABEÇALHO (Header e Navegação)
+   ========================================================================== */
 header {
-  position: sticky; 
-  top: 0; 
+  position: sticky;
+  top: 0;
   left: 0;
   width: 100%;
   z-index: 100;
   gap: 1.2em;
-
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 50px; 
-
+  padding: 15px 50px;
   background-color: var(--cor-branca);
   color: var(--cor-preta);
-
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
 }
-
 
 header .brand h1 {
   font-size: 1.6rem;
@@ -142,16 +139,17 @@ header .brand .tagline {
   margin-bottom: 0;
   opacity: 0.8;
 }
+
 header nav ul {
   display: flex;
   list-style: none;
   padding: 0;
-  margin: 0; 
-  gap: 1.5rem;  
+  margin: 0;
+  gap: 1.5rem;
 }
 
 header nav a {
-  color: var(--cor-preta); 
+  color: var(--cor-preta);
   font-weight: bold;
   font-size: 1rem;
   padding: 8px 16px;
@@ -159,23 +157,23 @@ header nav a {
   transition: background-color 0.3s, color 0.3s;
 }
 
-
 header nav a:hover {
   background-color: var(--cor-laranja);
   color: var(--cor-branca);
   text-decoration: none;
 }
 
-/* Link da página atual (aria-current) */
 header nav a[aria-current="page"] {
   color: var(--cor-vinho);
   background-color: rgba(136, 6, 6, 0.05);
 }
 
-/* Hero Banner (Banner Principal) */
+/* ==========================================================================
+   6. BANNER PRINCIPAL (Hero)
+   ========================================================================== */
 .banner-principal {
   position: relative;
-  height: 70vh; 
+  height: 70vh;
   width: 100%;
   background-image: url('https://images.pexels.com/photos/1437267/pexels-photo-1437267.jpeg');
   background-size: cover;
@@ -195,7 +193,7 @@ header nav a[aria-current="page"] {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(136, 6, 6, 0.7); 
+  background-color: rgba(136, 6, 6, 0.7);
 }
 
 .banner-conteudo {
@@ -212,7 +210,7 @@ header nav a[aria-current="page"] {
 .banner-conteudo p {
   font-size: 1.4rem;
   text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
-  max-width: 600px; /* Limita a largura do texto */
+  max-width: 600px;
   margin: 1rem auto 2rem auto;
 }
 
@@ -228,7 +226,10 @@ header nav a[aria-current="page"] {
   color: var(--cor-preta);
   text-decoration: none;
 }
-/* Cards (Pratos Favoritos) */
+
+/* ==========================================================================
+   7. SEÇÃO PRATOS FAVORITOS (Cards)
+   ========================================================================== */
 .cards {
   list-style: none;
   display: grid;
@@ -259,11 +260,13 @@ header nav a[aria-current="page"] {
 .cards .preco {
   font-size: 1.2rem;
   font-weight: bold;
-  color: var(--cor-preta); 
+  color: var(--cor-preta);
   margin-bottom: 0;
 }
 
-/* About (Seção Sobre) */
+/* ==========================================================================
+   8. SEÇÃO SOBRE A NONA
+   ========================================================================== */
 .about {
   display: grid;
   grid-template-columns: 5fr 3fr;
@@ -280,15 +283,19 @@ header nav a[aria-current="page"] {
 
 .about figcaption {
   font-size: 0.9rem;
-  color: var(--cor-preta); 
-  opacity: 0.7; 
+  color: var(--cor-preta);
+  opacity: 0.7;
   text-align: center;
   margin-top: 8px;
 }
 
+/* ==========================================================================
+   9. SEÇÃO CHAMADA PARA AÇÃO (CTA e Botões Gerais)
+   ========================================================================== */
+/* Botão Padrão */
 .cta {
   display: inline-block;
-  background-color: var(--cor-vermelho-medio); 
+  background-color: var(--cor-vermelho-medio);
   color: white;
   padding: 12px 24px;
   border-radius: 5px;
@@ -304,17 +311,50 @@ header nav a[aria-current="page"] {
   text-decoration: none;
 }
 
-footer {
-  background-color: #cfb6b4;
+/* Seção Específica (Fundo Preto) */
+#cta {
+  background-color: var(--cor-preta);
+  color: var(--cor-branca);
+  text-align: center;
 }
 
+#cta h2 {
+  color: var(--cor-branca);
+  margin-bottom: 20px;
+}
+
+#cta .cta {
+  font-size: 1.2rem;
+  padding: 15px 30px;
+}
+
+/* ==========================================================================
+   10. SEÇÃO DE CONTATO (Formulário e Resumo)
+   ========================================================================== */
+/* Container Duplo (Lado a Lado) */
+.container-duplo-contato {
+  display: flex;
+  gap: 40px;
+  align-items: center; /* Centraliza verticalmente */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.container-duplo-contato > section {
+  flex: 1;
+  padding: 0 !important;
+  width: 100%;
+}
+
+/* Estilo do Formulário */
 .form-container {
   background-color: var(--cor-branca);
   padding: 2.5rem;
   border-radius: 12px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
   width: 100%;
-  max-width: 500px;
+  max-width: 100%;
 }
 
 .form-container h2 {
@@ -373,33 +413,32 @@ footer {
   transform: translateY(-2px);
 }
 
-/* Rodapé */
+/* ==========================================================================
+   11. RODAPÉ
+   ========================================================================== */
 footer {
   background-color: var(--cor-preta);
   color: var(--cor-branca);
 }
 
 footer a {
-   color: var(--cor-branca);
-   font-weight: bold;
+  color: var(--cor-branca);
+  font-weight: bold;
 }
 
 footer a:hover {
   color: var(--cor-laranja);
 }
 
+/* ==========================================================================
+   12. RESPONSIVIDADE (Tablets e Celulares)
+   ========================================================================== */
 
-/* Estilos para telas de até 768px de largura (Tablets) */
+/* Telas até 768px (Tablets) */
 @media (max-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-  }
-  h2 {
-    font-size: 2rem;
-  }
-  h3 {
-    font-size: 1.5rem;
-  }
+  h1 { font-size: 2.5rem; }
+  h2 { font-size: 2rem; }
+  h3 { font-size: 1.5rem; }
 
   .banner-conteudo h2 {
     font-size: 2.8rem;
@@ -419,7 +458,6 @@ footer a:hover {
     text-align: center;
   }
 
-  /* Reseta o alinhamento para componentes específicos */
   .cards article,
   .about div,
   .form-container,
@@ -442,27 +480,26 @@ footer a:hover {
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
-} /* <-- Fim da media query de 768px */
 
+  /* Ajuste do Contato Lado a Lado para Mobile */
+  .container-duplo-contato {
+    flex-direction: column; /* Empilha o formulário e o endereço */
+    padding: 20px;
+  }
+} 
 
-/* Estilos para telas de até 480px de largura (Celulares) */
+/* Telas até 480px (Celulares) */
 @media (max-width: 480px) {
-  h1 {
-    font-size: 2rem;
-  }
-  h2 {
-    font-size: 1.75rem;
-  }
-  h3 {
-    font-size: 1.25rem;
-  }
-  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.75rem; }
+  h3 { font-size: 1.25rem; }
+
   .banner-conteudo h2 {
-    font-size: 2.2rem; 
+    font-size: 2.2rem;
     line-height: 1.3;
   }
   .banner-conteudo p {
-    font-size: 1.1rem; 
+    font-size: 1.1rem;
   }
 
   p {
@@ -486,5 +523,260 @@ footer a:hover {
   #contato-esquerda {
     text-align: left;
     margin-left: 5%;
+  }
+}
+/* ==========================================================================
+   13. PÁGINA DE CARDÁPIO (Novo Layout)
+   ========================================================================== */
+
+/* Ajuste do Título */
+.menu-intro h1 {
+  margin-bottom: 30px;
+}
+
+/* --- Seção 1: Categorias (Pills) --- */
+.categorias-scroll h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: var(--cor-preta);
+}
+
+.categorias-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto; /* Permite rolar para o lado no celular */
+  padding-bottom: 10px;
+  white-space: nowrap; /* Garante que fique em uma linha */
+}
+
+.cat-btn {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px; /* Formato retangular levemente arredondado */
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--cor-preta);
+  transition: all 0.3s;
+}
+
+.cat-btn:hover,
+.cat-btn.active {
+  background-color: var(--cor-preta);
+  color: var(--cor-branca);
+}
+
+/* --- Seção 2: Slider de Favoritos --- */
+.favoritos-slider-section {
+  margin-top: 20px;
+}
+
+.slider-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;       /* Ativa o scroll horizontal */
+  padding: 20px 5px;      /* Espaço para a sombra não cortar */
+  scroll-snap-type: x mandatory; /* Faz o card "travar" na posição ao rolar */
+}
+
+/* Estilo do Card Individual */
+.card-fav {
+  min-width: 260px;       /* Largura fixa do card */
+  height: 320px;          /* Altura do card */
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  position: relative;     /* Necessário para o overlay funcionar */
+  overflow: hidden;
+  scroll-snap-align: start; /* Onde o card para ao rolar */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Overlay Preto (80% opacidade) */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.80); /* Preto com 80% de opacidade */
+  color: var(--cor-branca);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 1; /* Você pediu visível, se quiser que apareça só no hover, mude para 0 */
+  transition: background-color 0.3s;
+}
+
+/* Textos dentro do Card */
+.card-overlay h4 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: var(--cor-branca);
+}
+
+.card-overlay p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.card-price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--cor-laranja);
+}
+/* --- Ajustes do Slider com Setas --- */
+
+/* Wrapper para posicionar os botões em cima do slider */
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Esconder a barra de rolagem feia, mas manter o scroll funcionando */
+.slider-container {
+  /* Firefox */
+  scrollbar-width: none; 
+}
+/* Chrome, Safari, Edge */
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estilo dos Botões (Setas) */
+.seta-slider {
+  background-color: var(--cor-preta);
+  color: var(--cor-branca);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Bolinha */
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background-color 0.2s;
+  z-index: 10; /* Ficar por cima dos cards */
+  flex-shrink: 0; /* Não esmagar o botão */
+}
+
+.seta-slider:hover {
+  background-color: var(--cor-laranja);
+  transform: scale(1.1);
+}
+
+/* Posicionamento Opcional: Se quiser que fiquem flutuando em cima da imagem */
+/* Se preferir que fiquem nos lados de fora, apague as linhas abaixo */
+.seta-esquerda {
+  margin-right: 10px;
+}
+.seta-direita {
+  margin-left: 10px;
+}
+
+/* No celular, escondemos as setas porque o dedo é melhor */
+@media (max-width: 768px) {
+  .seta-slider {
+    display: none;
+  }
+}
+
+
+/* --- Seção 3: Lista de Pratos (Horizontal) --- */
+.lista-pratos-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Espaço entre os pratos */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Imagem quadrada com cantos arredondados */
+.menu-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  background-color: #000; /* Fundo preto caso a imagem falhe */
+}
+
+/* Conteúdo de texto */
+.menu-item .item-content {
+  flex: 1; /* Ocupa todo o espaço restante */
+}
+
+.menu-item h4 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  color: var(--cor-preta);
+}
+
+/* Linha com Descrição ... Preço */
+.menu-item .item-info {
+  display: flex;
+  align-items: baseline; /* Alinha o texto pela base */
+  width: 100%;
+}
+
+.menu-item .desc {
+  font-size: 0.9rem;
+  color: #555;
+  white-space: nowrap; /* Tenta não quebrar a linha da descrição */
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* A linha pontilhada mágica que estica */
+.menu-item .dots {
+  flex: 1; /* Cresce para ocupar o espaço vazio */
+  border-bottom: 2px dotted #ccc;
+  margin: 0 10px;
+  position: relative;
+  top: -4px;
+}
+
+.price-badge {
+  background-color: #000;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px; /* Formato de pílula */
+  font-weight: bold;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Ajuste Mobile para a Lista */
+@media (max-width: 480px) {
+  .menu-item {
+    align-items: flex-start;
+  }
+  
+  .menu-item .item-info {
+    flex-wrap: wrap; /* Deixa quebrar linha se o nome for muito grande */
+  }
+  
+  .menu-item .dots {
+    display: none; /* Esconde os pontinhos no celular para não bagunçar */
+  }
+  
+  .menu-item .desc {
+    white-space: normal; /* Permite texto corrido no celular */
+    margin-bottom: 8px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
   }
 }
