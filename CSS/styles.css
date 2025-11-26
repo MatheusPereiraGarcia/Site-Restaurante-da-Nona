@@ -525,3 +525,258 @@ footer a:hover {
     margin-left: 5%;
   }
 }
+/* ==========================================================================
+   13. PÁGINA DE CARDÁPIO (Novo Layout)
+   ========================================================================== */
+
+/* Ajuste do Título */
+.menu-intro h1 {
+  margin-bottom: 30px;
+}
+
+/* --- Seção 1: Categorias (Pills) --- */
+.categorias-scroll h3 {
+  font-size: 1rem;
+  margin-bottom: 10px;
+  color: var(--cor-preta);
+}
+
+.categorias-container {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto; /* Permite rolar para o lado no celular */
+  padding-bottom: 10px;
+  white-space: nowrap; /* Garante que fique em uma linha */
+}
+
+.cat-btn {
+  background-color: #e0e0e0;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px; /* Formato retangular levemente arredondado */
+  font-weight: bold;
+  cursor: pointer;
+  color: var(--cor-preta);
+  transition: all 0.3s;
+}
+
+.cat-btn:hover,
+.cat-btn.active {
+  background-color: var(--cor-preta);
+  color: var(--cor-branca);
+}
+
+/* --- Seção 2: Slider de Favoritos --- */
+.favoritos-slider-section {
+  margin-top: 20px;
+}
+
+.slider-container {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;       /* Ativa o scroll horizontal */
+  padding: 20px 5px;      /* Espaço para a sombra não cortar */
+  scroll-snap-type: x mandatory; /* Faz o card "travar" na posição ao rolar */
+}
+
+/* Estilo do Card Individual */
+.card-fav {
+  min-width: 260px;       /* Largura fixa do card */
+  height: 320px;          /* Altura do card */
+  border-radius: 16px;
+  background-size: cover;
+  background-position: center;
+  position: relative;     /* Necessário para o overlay funcionar */
+  overflow: hidden;
+  scroll-snap-align: start; /* Onde o card para ao rolar */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Overlay Preto (80% opacidade) */
+.card-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.80); /* Preto com 80% de opacidade */
+  color: var(--cor-branca);
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  opacity: 1; /* Você pediu visível, se quiser que apareça só no hover, mude para 0 */
+  transition: background-color 0.3s;
+}
+
+/* Textos dentro do Card */
+.card-overlay h4 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+  color: var(--cor-branca);
+}
+
+.card-overlay p {
+  font-size: 0.9rem;
+  margin-bottom: 15px;
+  font-style: italic;
+  opacity: 0.9;
+}
+
+.card-price {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: var(--cor-laranja);
+}
+/* --- Ajustes do Slider com Setas --- */
+
+/* Wrapper para posicionar os botões em cima do slider */
+.slider-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+/* Esconder a barra de rolagem feia, mas manter o scroll funcionando */
+.slider-container {
+  /* Firefox */
+  scrollbar-width: none; 
+}
+/* Chrome, Safari, Edge */
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Estilo dos Botões (Setas) */
+.seta-slider {
+  background-color: var(--cor-preta);
+  color: var(--cor-branca);
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; /* Bolinha */
+  cursor: pointer;
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s, background-color 0.2s;
+  z-index: 10; /* Ficar por cima dos cards */
+  flex-shrink: 0; /* Não esmagar o botão */
+}
+
+.seta-slider:hover {
+  background-color: var(--cor-laranja);
+  transform: scale(1.1);
+}
+
+/* Posicionamento Opcional: Se quiser que fiquem flutuando em cima da imagem */
+/* Se preferir que fiquem nos lados de fora, apague as linhas abaixo */
+.seta-esquerda {
+  margin-right: 10px;
+}
+.seta-direita {
+  margin-left: 10px;
+}
+
+/* No celular, escondemos as setas porque o dedo é melhor */
+@media (max-width: 768px) {
+  .seta-slider {
+    display: none;
+  }
+}
+
+
+/* --- Seção 3: Lista de Pratos (Horizontal) --- */
+.lista-pratos-section {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* Espaço entre os pratos */
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Imagem quadrada com cantos arredondados */
+.menu-item img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  object-fit: cover;
+  background-color: #000; /* Fundo preto caso a imagem falhe */
+}
+
+/* Conteúdo de texto */
+.menu-item .item-content {
+  flex: 1; /* Ocupa todo o espaço restante */
+}
+
+.menu-item h4 {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  color: var(--cor-preta);
+}
+
+/* Linha com Descrição ... Preço */
+.menu-item .item-info {
+  display: flex;
+  align-items: baseline; /* Alinha o texto pela base */
+  width: 100%;
+}
+
+.menu-item .desc {
+  font-size: 0.9rem;
+  color: #555;
+  white-space: nowrap; /* Tenta não quebrar a linha da descrição */
+  max-width: 50%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* A linha pontilhada mágica que estica */
+.menu-item .dots {
+  flex: 1; /* Cresce para ocupar o espaço vazio */
+  border-bottom: 2px dotted #ccc;
+  margin: 0 10px;
+  position: relative;
+  top: -4px;
+}
+
+.price-badge {
+  background-color: #000;
+  color: #fff;
+  padding: 5px 12px;
+  border-radius: 20px; /* Formato de pílula */
+  font-weight: bold;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+/* Ajuste Mobile para a Lista */
+@media (max-width: 480px) {
+  .menu-item {
+    align-items: flex-start;
+  }
+  
+  .menu-item .item-info {
+    flex-wrap: wrap; /* Deixa quebrar linha se o nome for muito grande */
+  }
+  
+  .menu-item .dots {
+    display: none; /* Esconde os pontinhos no celular para não bagunçar */
+  }
+  
+  .menu-item .desc {
+    white-space: normal; /* Permite texto corrido no celular */
+    margin-bottom: 8px;
+    display: block;
+    width: 100%;
+    max-width: 100%;
+  }
+}

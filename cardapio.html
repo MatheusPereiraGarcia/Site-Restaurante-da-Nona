@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Restaurante da Nona — Cardápio</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+  <a href="#conteudo-cardapio" class="skip-link">Pular para o cardápio</a>
+
+  <header>
+    <div class="brand">
+      <h1>Restaurante da Nona</h1>
+      <p class="tagline">Comida caseira, como a da vó.</p>
+    </div>
+    <nav aria-label="Navegação principal">
+      <ul>
+        <li><a href="index.html">Início</a></li>
+        <li><a href="cardapio.html" aria-current="page">Cardápio</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="conteudo-cardapio">
+    
+    <section class="menu-intro">
+      <h1>Acompanhe nosso Cardápio!</h1>
+    </section>
+
+    <section class="categorias-scroll">
+      <h3>Categorias:</h3>
+      <div class="categorias-container">
+        <button class="cat-btn active">Massas</button>
+        <button class="cat-btn">Carnes</button>
+        <button class="cat-btn">Vegano</button>
+        <button class="cat-btn">Sobremesas</button>
+        <button class="cat-btn">Bebidas</button>
+        <button class="cat-btn">Vinhos</button>
+      </div>
+    </section>
+
+    <section class="favoritos-slider-section">
+      <h3>Pratos Favoritos</h3>
+      
+      <div class="slider-wrapper">
+        
+        <button class="seta-slider seta-esquerda" onclick="moverSlider(-1)">&#10094;</button>
+
+        <div class="slider-container" id="sliderFavoritos">
+          
+          <article class="card-fav" style="background-image: url('https://images.pexels.com/photos/1279330/pexels-photo-1279330.jpeg');">
+            <div class="card-overlay">
+              <h4>Spaghetti Carbonara</h4>
+              <p>Bacon, ovos e parmesão.</p>
+              <span class="card-price">R$ 42,00</span>
+            </div>
+          </article>
+
+          <article class="card-fav" style="background-image: url('https://images.pexels.com/photos/1527603/pexels-photo-1527603.jpeg');">
+            <div class="card-overlay">
+              <h4>Macarrão ao Pesto</h4>
+              <p>Manjericão fresco e nozes.</p>
+              <span class="card-price">R$ 38,00</span>
+            </div>
+          </article>
+
+          <article class="card-fav" style="background-image: url('https://images.pexels.com/photos/5639538/pexels-photo-5639538.jpeg');">
+            <div class="card-overlay">
+              <h4>Lasanha da Nona</h4>
+              <p>Bolonhesa clássica.</p>
+              <span class="card-price">R$ 45,00</span>
+            </div>
+          </article>
+
+          <article class="card-fav" style="background-image: url('https://images.pexels.com/photos/803963/pexels-photo-803963.jpeg');">
+            <div class="card-overlay">
+              <h4>Nhoque de Batata</h4>
+              <p>Ao sugo com manjericão.</p>
+              <span class="card-price">R$ 35,00</span>
+            </div>
+          </article>
+
+          <article class="card-fav" style="background-image: url('https://images.pexels.com/photos/2092916/pexels-photo-2092916.jpeg');">
+            <div class="card-overlay">
+              <h4>Tiramisù</h4>
+              <p>Clássico doce italiano.</p>
+              <span class="card-price">R$ 22,00</span>
+            </div>
+          </article>
+
+        </div>
+
+        <button class="seta-slider seta-direita" onclick="moverSlider(1)">&#10095;</button>
+      
+      </div>
+    </section>
+
+    <section class="lista-pratos-section">
+      <h3>Outras Delícias</h3>
+      
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/1438672/pexels-photo-1438672.jpeg" alt="Foto do prato">
+        <div class="item-content">
+          <h4>Risoto de Funghi</h4>
+          <div class="item-info">
+            <span class="desc">Arroz arbóreo e cogumelos frescos</span>
+            <span class="dots"></span>
+            <span class="price-badge">R$ 48,00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/5953496/pexels-photo-5953496.jpeg" alt="Foto do prato">
+        <div class="item-content">
+          <h4>Polenta Cremosa</h4>
+          <div class="item-info">
+            <span class="desc">Com ragu de carne de panela</span>
+            <span class="dots"></span>
+            <span class="price-badge">R$ 36,00</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="menu-item">
+        <img src="https://images.pexels.com/photos/628776/pexels-photo-628776.jpeg" alt="Foto do prato">
+        <div class="item-content">
+          <h4>Salada Caprese</h4>
+          <div class="item-info">
+            <span class="desc">Tomate, mussarela de búfala e pesto</span>
+            <span class="dots"></span>
+            <span class="price-badge">R$ 28,00</span>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <nav aria-label="Rodapé">
+      <ul class="footer-links">
+        <li><a href="cardapio.html">Cardápio</a></li>
+        <li><a href="index.html#contato">Contato</a></li>
+      </ul>
+    </nav>
+    <p>© 2025 Restaurante da Nona • CNPJ fictício • Fotos meramente ilustrativas</p>
+  </footer>
+  <script>
+    function moverSlider(direcao) {
+      const slider = document.getElementById('sliderFavoritos');
+      const larguraCard = 280; // Largura do card + gap aproximado
+      
+      // Rola suavemente para a esquerda ou direita
+      slider.scrollBy({
+        left: direcao * larguraCard,
+        behavior: 'smooth'
+      });
+    }
+  </script>
+</body>
+</html>
