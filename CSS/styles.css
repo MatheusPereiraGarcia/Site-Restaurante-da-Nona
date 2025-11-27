@@ -64,18 +64,40 @@ img {
 /* ==========================================================================
    3. TIPOGRAFIA E LINKS
    ========================================================================== */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2.5rem; }
-h3 { font-size: 1.75rem; }
-h4 { font-size: 1.25rem; }
-h5 { font-size: 1rem; }
-h6 { font-size: 0.875rem; }
+h1 {
+  font-size: 3rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.75rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+}
+
+h5 {
+  font-size: 1rem;
+}
+
+h6 {
+  font-size: 0.875rem;
+}
 
 p {
   font-size: 1rem;
@@ -98,6 +120,7 @@ a:hover {
    ========================================================================== */
 main section:not(.hero-banner),
 footer {
+  /* Padding padrão global (Cuidado: isso afeta o cardápio também) */
   padding: 60px 20px;
 }
 
@@ -228,7 +251,7 @@ header nav a[aria-current="page"] {
 }
 
 /* ==========================================================================
-   7. SEÇÃO PRATOS FAVORITOS (Cards)
+   7. SEÇÃO PRATOS FAVORITOS (Cards Home)
    ========================================================================== */
 .cards {
   list-style: none;
@@ -292,7 +315,6 @@ header nav a[aria-current="page"] {
 /* ==========================================================================
    9. SEÇÃO CHAMADA PARA AÇÃO (CTA e Botões Gerais)
    ========================================================================== */
-/* Botão Padrão */
 .cta {
   display: inline-block;
   background-color: var(--cor-vermelho-medio);
@@ -311,7 +333,6 @@ header nav a[aria-current="page"] {
   text-decoration: none;
 }
 
-/* Seção Específica (Fundo Preto) */
 #cta {
   background-color: var(--cor-preta);
   color: var(--cor-branca);
@@ -329,25 +350,23 @@ header nav a[aria-current="page"] {
 }
 
 /* ==========================================================================
-   10. SEÇÃO DE CONTATO (Formulário e Resumo)
+   10. SEÇÃO DE CONTATO
    ========================================================================== */
-/* Container Duplo (Lado a Lado) */
 .container-duplo-contato {
   display: flex;
   gap: 40px;
-  align-items: center; /* Centraliza verticalmente */
+  align-items: center;
   max-width: 1100px;
   margin: 0 auto;
   padding: 60px 20px;
 }
 
-.container-duplo-contato > section {
+.container-duplo-contato>section {
   flex: 1;
   padding: 0 !important;
   width: 100%;
 }
 
-/* Estilo do Formulário */
 .form-container {
   background-color: var(--cor-branca);
   padding: 2.5rem;
@@ -431,18 +450,25 @@ footer a:hover {
 }
 
 /* ==========================================================================
-   12. RESPONSIVIDADE (Tablets e Celulares)
+   12. RESPONSIVIDADE (Geral)
    ========================================================================== */
-
-/* Telas até 768px (Tablets) */
 @media (max-width: 768px) {
-  h1 { font-size: 2.5rem; }
-  h2 { font-size: 2rem; }
-  h3 { font-size: 1.5rem; }
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.5rem;
+  }
 
   .banner-conteudo h2 {
     font-size: 2.8rem;
   }
+
   .banner-conteudo p {
     font-size: 1.2rem;
   }
@@ -471,33 +497,37 @@ footer a:hover {
 
   .about figure {
     width: 90%;
-    max-width: 1000px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 20px;
+    margin: 0 auto 20px auto;
   }
 
   .cards {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Ajuste do Contato Lado a Lado para Mobile */
   .container-duplo-contato {
-    flex-direction: column; /* Empilha o formulário e o endereço */
+    flex-direction: column;
     padding: 20px;
   }
-} 
+}
 
-/* Telas até 480px (Celulares) */
 @media (max-width: 480px) {
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.75rem; }
-  h3 { font-size: 1.25rem; }
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1.25rem;
+  }
 
   .banner-conteudo h2 {
     font-size: 2.2rem;
     line-height: 1.3;
   }
+
   .banner-conteudo p {
     font-size: 1.1rem;
   }
@@ -525,147 +555,158 @@ footer a:hover {
     margin-left: 5%;
   }
 }
-/* ==========================================================================
-   13. PÁGINA DE CARDÁPIO (Novo Layout)
-   ========================================================================== */
 
-/* Ajuste do Título */
-.menu-intro h1 {
-  margin-bottom: 30px;
+/* ==========================================================================
+13. PÁGINA DE CARDÁPIO (CSS CORRIGIDO E COMPLETO)
+========================================================================== */
+
+#conteudo-cardapio section {
+  padding-top: 10px;
+  padding-bottom: 30px;
 }
 
-/* --- Seção 1: Categorias (Pills) --- */
-.categorias-scroll h3 {
-  font-size: 1rem;
-  margin-bottom: 10px;
+
+.menu-intro h1 {
+  margin-bottom: 20px;
+  margin-top: 20px;
+  font-size: 2.5rem;
+}
+
+
+.categorias-scroll h2 {
+  font-size: 2rem;
+  margin-bottom: 15px;
   color: var(--cor-preta);
+  font-weight: 800;
 }
 
 .categorias-container {
   display: flex;
-  gap: 10px;
-  overflow-x: auto; /* Permite rolar para o lado no celular */
+  gap: 15px;
+  overflow-x: auto;
   padding-bottom: 10px;
-  white-space: nowrap; /* Garante que fique em uma linha */
+  white-space: nowrap;
+  scrollbar-width: none;
+}
+
+.categorias-container::-webkit-scrollbar {
+  display: none;
 }
 
 .cat-btn {
-  background-color: #e0e0e0;
+  background-color: #f0f0f0;
   border: none;
-  padding: 10px 20px;
-  border-radius: 4px; /* Formato retangular levemente arredondado */
+  padding: 15px 30px;
+  font-size: 1.2rem;
+  border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
-  color: var(--cor-preta);
+  color: #555;
   transition: all 0.3s;
 }
 
 .cat-btn:hover,
 .cat-btn.active {
   background-color: var(--cor-preta);
-  color: var(--cor-branca);
+  color: var(--cor-laranja);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
-/* --- Seção 2: Slider de Favoritos --- */
+
 .favoritos-slider-section {
-  margin-top: 20px;
+  margin-top: 0 !important;
+}
+
+.favoritos-slider-section h3 {
+  font-size: 1.8rem;
+  margin-bottom: 15px;
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
 }
 
 .slider-container {
   display: flex;
   gap: 20px;
-  overflow-x: auto;       /* Ativa o scroll horizontal */
-  padding: 20px 5px;      /* Espaço para a sombra não cortar */
-  scroll-snap-type: x mandatory; /* Faz o card "travar" na posição ao rolar */
+  overflow-x: auto;
+  padding: 20px 10px;
+  scroll-snap-type: x mandatory;
+  max-width: 100%;
+  width: 100%;
+  scrollbar-width: none;
 }
 
-/* Estilo do Card Individual */
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
 .card-fav {
-  min-width: 260px;       /* Largura fixa do card */
-  height: 320px;          /* Altura do card */
+  min-width: 260px;
+  height: 350px;
   border-radius: 16px;
   background-size: cover;
   background-position: center;
-  position: relative;     /* Necessário para o overlay funcionar */
+  position: relative;
   overflow: hidden;
-  scroll-snap-align: start; /* Onde o card para ao rolar */
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  scroll-snap-align: center;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  flex-shrink: 0;
 }
 
-/* Overlay Preto (80% opacidade) */
+
 .card-overlay {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.80); /* Preto com 80% de opacidade */
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.3));
   color: var(--cor-branca);
-  
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   text-align: center;
   padding: 20px;
-  opacity: 1; /* Você pediu visível, se quiser que apareça só no hover, mude para 0 */
-  transition: background-color 0.3s;
 }
 
-/* Textos dentro do Card */
 .card-overlay h4 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   margin-bottom: 5px;
   color: var(--cor-branca);
 }
 
-.card-overlay p {
-  font-size: 0.9rem;
-  margin-bottom: 15px;
-  font-style: italic;
-  opacity: 0.9;
-}
-
 .card-price {
   font-weight: bold;
-  font-size: 1.1rem;
+  font-size: 1.3rem;
   color: var(--cor-laranja);
-}
-/* --- Ajustes do Slider com Setas --- */
-
-/* Wrapper para posicionar os botões em cima do slider */
-.slider-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 5px 15px;
+  border-radius: 20px;
+  margin-top: 10px;
 }
 
-/* Esconder a barra de rolagem feia, mas manter o scroll funcionando */
-.slider-container {
-  /* Firefox */
-  scrollbar-width: none; 
-}
-/* Chrome, Safari, Edge */
-.slider-container::-webkit-scrollbar {
-  display: none;
-}
-
-/* Estilo dos Botões (Setas) */
 .seta-slider {
   background-color: var(--cor-preta);
   color: var(--cor-branca);
   border: none;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%; /* Bolinha */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
   cursor: pointer;
   font-size: 1.2rem;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: transform 0.2s, background-color 0.2s;
-  z-index: 10; /* Ficar por cima dos cards */
-  flex-shrink: 0; /* Não esmagar o botão */
+  z-index: 10;
+  flex-shrink: 0;
 }
 
 .seta-slider:hover {
@@ -673,88 +714,143 @@ footer a:hover {
   transform: scale(1.1);
 }
 
-/* Posicionamento Opcional: Se quiser que fiquem flutuando em cima da imagem */
-/* Se preferir que fiquem nos lados de fora, apague as linhas abaixo */
 .seta-esquerda {
   margin-right: 10px;
 }
+
 .seta-direita {
   margin-left: 10px;
 }
 
-/* No celular, escondemos as setas porque o dedo é melhor */
-@media (max-width: 768px) {
-  .seta-slider {
-    display: none;
-  }
-}
-
-
-/* --- Seção 3: Lista de Pratos (Horizontal) --- */
+/* --- Lista de Outras Delícias  --- */
 .lista-pratos-section {
   display: flex;
   flex-direction: column;
-  gap: 30px; /* Espaço entre os pratos */
+  gap: 15px;
+  width: 100%;
 }
 
 .menu-item {
   display: flex;
   align-items: center;
+  width: 100%;
   gap: 20px;
+  background-color: #fff;
+  padding: 15px;
+  border-radius: 16px;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
 
-/* Imagem quadrada com cantos arredondados */
+
+.menu-item:hover {
+  cursor: pointer;
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  background-color: #fcfcfc;
+  border-color: #eee;
+}
+
+/* Imagem */
 .menu-item img {
   width: 100px;
   height: 100px;
   border-radius: 12px;
   object-fit: cover;
-  background-color: #000; /* Fundo preto caso a imagem falhe */
+  flex-shrink: 0;
+  background-color: #000;
+  transition: transform 0.3s ease;
 }
 
-/* Conteúdo de texto */
+.menu-item:hover img {
+  transform: scale(1.05);
+}
+
 .menu-item .item-content {
-  flex: 1; /* Ocupa todo o espaço restante */
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-width: 0;
 }
 
 .menu-item h4 {
   margin-bottom: 5px;
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: var(--cor-preta);
+  text-align: left;
+  transition: color 0.3s;
 }
 
-/* Linha com Descrição ... Preço */
+
+.menu-item:hover h4 {
+  color: var(--cor-vermelho-medio);
+}
+
+
 .menu-item .item-info {
   display: grid;
-  grid-template-columns: auto 1fr auto; /* desc | pontinhos | preço */
-  column-gap: 12px;
-  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  align-items: end;
+  gap: 10px;
   width: 100%;
 }
 
 .menu-item .desc {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #555;
   white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
 .menu-item .dots {
-  width: 100%;
   border-bottom: 2px dotted #ccc;
   position: relative;
-  top: -3px;
+  bottom: 5px;
+  width: 100%;
+  height: 1px;
+  display: block;
 }
 
 .price-badge {
   background-color: #000;
   color: #fff;
-  padding: 5px 12px;
+  padding: 6px 14px;
   border-radius: 20px;
   font-weight: bold;
-  font-size: 0.9rem;
+  font-size: 1rem;
   white-space: nowrap;
+  transition: background-color 0.3s;
 }
 
-/* Ajuste Mobile para a Lista */
+
+.menu-item:hover .price-badge {
+  background-color: var(--cor-laranja);
+}
+
+
+@media (max-width: 600px) {
+  .menu-item {
+    align-items: flex-start;
+    padding: 10px;
+  }
+
+  .menu-item .item-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .menu-item .dots {
+    display: none;
+  }
+
+  .menu-item .desc {
+    white-space: normal;
+  }
+
+  .menu-item:hover {
+    transform: none;
+  }
+}
